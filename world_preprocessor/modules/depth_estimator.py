@@ -4,7 +4,7 @@ from PIL import Image
 from transformers import AutoImageProcessor, AutoModelForDepthEstimation
 import logging
 
-from ..config import DEPTH_MODEL_ID, DEVICE
+from config import DEPTH_MODEL_ID, DEVICE
 
 logger = logging.getLogger("DepthEstimator")
 

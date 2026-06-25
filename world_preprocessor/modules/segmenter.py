@@ -5,7 +5,7 @@ from transformers import Sam2Model, Sam2Processor
 import logging
 from typing import List, Dict, Any
 
-from ..config import SAM2_MODEL_ID, SAM2_DTYPE, DEVICE
+from config import SAM2_MODEL_ID, SAM2_DTYPE, DEVICE
 
 logger = logging.getLogger("Segmenter")
 

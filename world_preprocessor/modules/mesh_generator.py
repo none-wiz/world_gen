@@ -3,7 +3,7 @@ import torch
 from PIL import Image
 import logging
 
-from ..config import DEVICE, SF3D_MODEL_ID, TRIPOSR_MODEL_ID
+from config import DEVICE, SF3D_MODEL_ID, TRIPOSR_MODEL_ID
 
 logger = logging.getLogger("MeshGenerator")
 
