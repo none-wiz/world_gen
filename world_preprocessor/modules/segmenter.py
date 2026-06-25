@@ -60,12 +60,13 @@ class ObjectSegmenter:
             with torch.inference_mode():
                 outputs = self.model(**inputs)
                 
-            # Process masks
-            # masks shape: [batch, num_low_res_masks, H, W]
+            original_sizes = inputs.get("original_sizes", None)
+            reshaped_input_sizes = inputs.get("reshaped_input_sizes", None)
+            
             masks = self.processor.post_process_masks(
                 outputs.pred_masks,
-                inputs.original_sizes,
-                inputs.reshaped_input_sizes
+                original_sizes,
+                reshaped_input_sizes
             )
             
             for mask_list in masks:
