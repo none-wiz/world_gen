@@ -19,6 +19,7 @@ from modules.segmenter import ObjectSegmenter
 from modules.depth_estimator import DepthEstimator
 from modules.mesh_generator import MeshGenerator
 from modules.scene_compiler import SceneCompiler
+from modules.categorizer import ObjectCategorizer
 
 def parse_args():
     parser = argparse.ArgumentParser(description="3D World Preprocessing Pipeline")
@@ -73,6 +74,18 @@ def run_pipeline(image_path: str, output_dir: str):
             
         # Clean up segmenter explicitly
         del segmenter
+        
+    # -------------------------------------------------------------------------
+    # STAGE 1.5: Object VLM Categorization
+    # -------------------------------------------------------------------------
+    logger.info("--- STAGE 1.5: Object Categorization (VLM) ---")
+    if len(segments) > 0:
+        with MemoryGuard():
+            categorizer = ObjectCategorizer()
+            categorizer.run_categorization(output_dir, segments)
+            del categorizer
+    else:
+        logger.warning("No foreground segments found. Skipping VLM categorization.")
         
     # -------------------------------------------------------------------------
     # STAGE 2: Depth Map Estimation

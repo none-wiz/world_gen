@@ -6,7 +6,7 @@
     "objects": [
         {
             "id": 0,
-            "mesh_file": "object_0.obj",
+            "mesh_file": "object_0.glb",
             "texture_file": "object_0_tex.png",
             "transform": {
                 "position": {
@@ -35,18 +35,18 @@
         },
         {
             "id": 1,
-            "mesh_file": "object_1.obj",
+            "mesh_file": "object_1.glb",
             "texture_file": "object_1_tex.png",
             "transform": {
                 "position": {
-                    "x": -3.39,
-                    "y": 4.927,
-                    "z": 1.771
+                    "x": -3.801,
+                    "y": 4.928,
+                    "z": 1.413
                 },
                 "scale": {
-                    "x": 1.61,
-                    "y": 3.151,
-                    "z": 2.38
+                    "x": 1.199,
+                    "y": 2.689,
+                    "z": 1.944
                 },
                 "rotation": {
                     "x": 0.0,
@@ -56,26 +56,26 @@
             },
             "bounds_2d": {
                 "xmin": 0,
-                "ymin": 6,
-                "xmax": 443,
-                "ymax": 490
+                "ymin": 69,
+                "xmax": 330,
+                "ymax": 482
             },
-            "mean_depth": 0.4927
+            "mean_depth": 0.4928
         },
         {
             "id": 2,
-            "mesh_file": "object_2.obj",
+            "mesh_file": "object_2.glb",
             "texture_file": "object_2_tex.png",
             "transform": {
                 "position": {
-                    "x": -3.805,
+                    "x": -3.808,
                     "y": 4.929,
                     "z": 1.367
                 },
                 "scale": {
-                    "x": 1.195,
+                    "x": 1.192,
                     "y": 2.695,
-                    "z": 1.945
+                    "z": 1.944
                 },
                 "rotation": {
                     "x": 0.0,
@@ -86,25 +86,25 @@
             "bounds_2d": {
                 "xmin": 0,
                 "ymin": 72,
-                "xmax": 329,
+                "xmax": 328,
                 "ymax": 486
             },
             "mean_depth": 0.4929
         },
         {
             "id": 3,
-            "mesh_file": "object_3.obj",
+            "mesh_file": "object_3.glb",
             "texture_file": "object_3_tex.png",
             "transform": {
                 "position": {
-                    "x": -3.405,
-                    "y": 5.015,
-                    "z": -0.677
+                    "x": -3.419,
+                    "y": 5.026,
+                    "z": -0.684
                 },
                 "scale": {
-                    "x": 0.65,
-                    "y": 1.289,
-                    "z": 0.97
+                    "x": 0.636,
+                    "y": 1.296,
+                    "z": 0.966
                 },
                 "rotation": {
                     "x": 0.0,
@@ -115,19 +115,19 @@
             "bounds_2d": {
                 "xmin": 130,
                 "ymin": 337,
-                "xmax": 309,
-                "ymax": 535
+                "xmax": 305,
+                "ymax": 536
             },
-            "mean_depth": 0.5015
+            "mean_depth": 0.5026
         },
         {
             "id": 4,
-            "mesh_file": "object_4.obj",
+            "mesh_file": "object_4.glb",
             "texture_file": "object_4_tex.png",
             "transform": {
                 "position": {
                     "x": -3.648,
-                    "y": 5.636,
+                    "y": 5.635,
                     "z": -1.491
                 },
                 "scale": {
@@ -147,12 +147,186 @@
                 "xmax": 243,
                 "ymax": 537
             },
-            "mean_depth": 0.5636
+            "mean_depth": 0.5635
         },
         {
             "id": 5,
-            "mesh_file": "object_5.obj",
+            "mesh_file": "object_5.glb",
             "texture_file": "object_5_tex.png",
+            "transform": {
+                "position": {
+                    "x": -3.906,
+                    "y": 9.74,
+                    "z": -2.734
+                },
+                "scale": {
+                    "x": 1.094,
+                    "y": 0.716,
+                    "z": 0.905
+                },
+                "rotation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                }
+            },
+            "bounds_2d": {
+                "xmin": 0,
+                "ymin": 539,
+                "xmax": 301,
+                "ymax": 649
+            },
+            "mean_depth": 0.974
+        },
+        {
+            "id": 6,
+            "mesh_file": "object_6.glb",
+            "texture_file": "object_6_tex.png",
+            "transform": {
+                "position": {
+                    "x": -3.703,
+                    "y": 0.917,
+                    "z": 4.108
+                },
+                "scale": {
+                    "x": 1.297,
+                    "y": 0.892,
+                    "z": 1.095
+                },
+                "rotation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                }
+            },
+            "bounds_2d": {
+                "xmin": 0,
+                "ymin": 0,
+                "xmax": 357,
+                "ymax": 137
+            },
+            "mean_depth": 0.0917
+        },
+        {
+            "id": 7,
+            "mesh_file": "object_7.glb",
+            "texture_file": "object_7_tex.png",
+            "transform": {
+                "position": {
+                    "x": -4.19,
+                    "y": 9.797,
+                    "z": -2.734
+                },
+                "scale": {
+                    "x": 0.81,
+                    "y": 0.69,
+                    "z": 0.75
+                },
+                "rotation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                }
+            },
+            "bounds_2d": {
+                "xmin": 0,
+                "ymin": 541,
+                "xmax": 223,
+                "ymax": 647
+            },
+            "mean_depth": 0.9797
+        },
+        {
+            "id": 8,
+            "mesh_file": "object_8.glb",
+            "texture_file": "object_8_tex.png",
+            "transform": {
+                "position": {
+                    "x": -3.993,
+                    "y": 9.771,
+                    "z": -2.734
+                },
+                "scale": {
+                    "x": 1.007,
+                    "y": 0.703,
+                    "z": 0.855
+                },
+                "rotation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                }
+            },
+            "bounds_2d": {
+                "xmin": 0,
+                "ymin": 540,
+                "xmax": 277,
+                "ymax": 648
+            },
+            "mean_depth": 0.9771
+        },
+        {
+            "id": 9,
+            "mesh_file": "object_9.glb",
+            "texture_file": "object_9_tex.png",
+            "transform": {
+                "position": {
+                    "x": -3.921,
+                    "y": 9.703,
+                    "z": -3.483
+                },
+                "scale": {
+                    "x": 1.079,
+                    "y": 1.452,
+                    "z": 1.266
+                },
+                "rotation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                }
+            },
+            "bounds_2d": {
+                "xmin": 0,
+                "ymin": 540,
+                "xmax": 297,
+                "ymax": 763
+            },
+            "mean_depth": 0.9703
+        },
+        {
+            "id": 10,
+            "mesh_file": "object_10.glb",
+            "texture_file": "object_10_tex.png",
+            "transform": {
+                "position": {
+                    "x": -3.143,
+                    "y": 8.934,
+                    "z": -4.238
+                },
+                "scale": {
+                    "x": 0.36,
+                    "y": 0.749,
+                    "z": 0.554
+                },
+                "rotation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                }
+            },
+            "bounds_2d": {
+                "xmin": 206,
+                "ymin": 652,
+                "xmax": 305,
+                "ymax": 767
+            },
+            "mean_depth": 0.8934
+        },
+        {
+            "id": 11,
+            "mesh_file": "object_11.glb",
+            "texture_file": "object_11_tex.png",
             "transform": {
                 "position": {
                     "x": -2.871,
@@ -179,19 +353,19 @@
             "mean_depth": 0.5339
         },
         {
-            "id": 6,
-            "mesh_file": "object_6.obj",
-            "texture_file": "object_6_tex.png",
+            "id": 12,
+            "mesh_file": "object_12.glb",
+            "texture_file": "object_12_tex.png",
             "transform": {
                 "position": {
-                    "x": -1.334,
-                    "y": 0.638,
-                    "z": 4.134
+                    "x": -3.841,
+                    "y": 4.956,
+                    "z": 1.341
                 },
                 "scale": {
-                    "x": 0.483,
-                    "y": 0.814,
-                    "z": 0.649
+                    "x": 1.159,
+                    "y": 2.721,
+                    "z": 1.94
                 },
                 "rotation": {
                     "x": 0.0,
@@ -200,27 +374,56 @@
                 }
             },
             "bounds_2d": {
-                "xmin": 438,
-                "ymin": 4,
-                "xmax": 571,
-                "ymax": 129
+                "xmin": 0,
+                "ymin": 72,
+                "xmax": 319,
+                "ymax": 490
             },
-            "mean_depth": 0.0638
+            "mean_depth": 0.4956
         },
         {
-            "id": 7,
-            "mesh_file": "object_7.obj",
-            "texture_file": "object_7_tex.png",
+            "id": 13,
+            "mesh_file": "object_13.glb",
+            "texture_file": "object_13_tex.png",
+            "transform": {
+                "position": {
+                    "x": -2.562,
+                    "y": 6.017,
+                    "z": -3.932
+                },
+                "scale": {
+                    "x": 0.425,
+                    "y": 1.029,
+                    "z": 0.727
+                },
+                "rotation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                }
+            },
+            "bounds_2d": {
+                "xmin": 277,
+                "ymin": 607,
+                "xmax": 394,
+                "ymax": 765
+            },
+            "mean_depth": 0.6017
+        },
+        {
+            "id": 14,
+            "mesh_file": "object_14.glb",
+            "texture_file": "object_14_tex.png",
             "transform": {
                 "position": {
                     "x": -0.712,
-                    "y": 0.659,
-                    "z": 3.372
+                    "y": 0.654,
+                    "z": 3.438
                 },
                 "scale": {
-                    "x": 2.1,
-                    "y": 1.628,
-                    "z": 1.864
+                    "x": 2.108,
+                    "y": 1.562,
+                    "z": 1.835
                 },
                 "rotation": {
                     "x": 0.0,
@@ -229,27 +432,27 @@
                 }
             },
             "bounds_2d": {
-                "xmin": 301,
+                "xmin": 300,
                 "ymin": 0,
-                "xmax": 879,
-                "ymax": 250
+                "xmax": 880,
+                "ymax": 240
             },
-            "mean_depth": 0.0659
+            "mean_depth": 0.0654
         },
         {
-            "id": 8,
-            "mesh_file": "object_8.obj",
-            "texture_file": "object_8_tex.png",
+            "id": 15,
+            "mesh_file": "object_15.glb",
+            "texture_file": "object_15_tex.png",
             "transform": {
                 "position": {
-                    "x": -1.926,
-                    "y": 1.678,
-                    "z": -0.677
+                    "x": -2.333,
+                    "y": 0.704,
+                    "z": 1.335
                 },
                 "scale": {
-                    "x": 0.523,
-                    "y": 0.82,
-                    "z": 0.672
+                    "x": 0.276,
+                    "y": 1.191,
+                    "z": 0.734
                 },
                 "rotation": {
                     "x": 0.0,
@@ -258,27 +461,56 @@
                 }
             },
             "bounds_2d": {
-                "xmin": 351,
-                "ymin": 373,
-                "xmax": 495,
-                "ymax": 499
+                "xmin": 329,
+                "ymin": 190,
+                "xmax": 405,
+                "ymax": 373
             },
-            "mean_depth": 0.1678
+            "mean_depth": 0.0704
         },
         {
-            "id": 9,
-            "mesh_file": "object_9.obj",
-            "texture_file": "object_9_tex.png",
+            "id": 16,
+            "mesh_file": "object_16.glb",
+            "texture_file": "object_16_tex.png",
             "transform": {
                 "position": {
-                    "x": 1.072,
-                    "y": 0.7,
-                    "z": 2.533
+                    "x": -2.158,
+                    "y": 4.496,
+                    "z": -1.068
                 },
                 "scale": {
-                    "x": 3.877,
-                    "y": 2.467,
-                    "z": 3.172
+                    "x": 0.305,
+                    "y": 1.055,
+                    "z": 0.68
+                },
+                "rotation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                }
+            },
+            "bounds_2d": {
+                "xmin": 349,
+                "ymin": 385,
+                "xmax": 433,
+                "ymax": 547
+            },
+            "mean_depth": 0.4496
+        },
+        {
+            "id": 17,
+            "mesh_file": "object_17.glb",
+            "texture_file": "object_17_tex.png",
+            "transform": {
+                "position": {
+                    "x": -1.879,
+                    "y": 0.617,
+                    "z": 4.076
+                },
+                "scale": {
+                    "x": 0.927,
+                    "y": 0.924,
+                    "z": 0.926
                 },
                 "rotation": {
                     "x": 0.0,
@@ -289,25 +521,199 @@
             "bounds_2d": {
                 "xmin": 302,
                 "ymin": 0,
-                "xmax": 1369,
+                "xmax": 557,
+                "ymax": 142
+            },
+            "mean_depth": 0.0617
+        },
+        {
+            "id": 18,
+            "mesh_file": "object_18.glb",
+            "texture_file": "object_18_tex.png",
+            "transform": {
+                "position": {
+                    "x": -2.089,
+                    "y": 7.672,
+                    "z": -4.141
+                },
+                "scale": {
+                    "x": 0.302,
+                    "y": 0.768,
+                    "z": 0.535
+                },
+                "rotation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                }
+            },
+            "bounds_2d": {
+                "xmin": 359,
+                "ymin": 643,
+                "xmax": 442,
+                "ymax": 761
+            },
+            "mean_depth": 0.7672
+        },
+        {
+            "id": 19,
+            "mesh_file": "object_19.glb",
+            "texture_file": "object_19_tex.png",
+            "transform": {
+                "position": {
+                    "x": -1.334,
+                    "y": 0.64,
+                    "z": 3.887
+                },
+                "scale": {
+                    "x": 0.483,
+                    "y": 0.566,
+                    "z": 0.525
+                },
+                "rotation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                }
+            },
+            "bounds_2d": {
+                "xmin": 438,
+                "ymin": 42,
+                "xmax": 571,
+                "ymax": 129
+            },
+            "mean_depth": 0.064
+        },
+        {
+            "id": 20,
+            "mesh_file": "object_20.glb",
+            "texture_file": "object_20_tex.png",
+            "transform": {
+                "position": {
+                    "x": -1.802,
+                    "y": 0.662,
+                    "z": 3.372
+                },
+                "scale": {
+                    "x": 1.003,
+                    "y": 1.628,
+                    "z": 1.315
+                },
+                "rotation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                }
+            },
+            "bounds_2d": {
+                "xmin": 302,
+                "ymin": 0,
+                "xmax": 578,
+                "ymax": 250
+            },
+            "mean_depth": 0.0662
+        },
+        {
+            "id": 21,
+            "mesh_file": "object_21.glb",
+            "texture_file": "object_21_tex.png",
+            "transform": {
+                "position": {
+                    "x": 0.414,
+                    "y": 0.841,
+                    "z": 0.99
+                },
+                "scale": {
+                    "x": 2.929,
+                    "y": 1.354,
+                    "z": 2.141
+                },
+                "rotation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                }
+            },
+            "bounds_2d": {
+                "xmin": 342,
+                "ymin": 204,
+                "xmax": 1148,
+                "ymax": 412
+            },
+            "mean_depth": 0.0841
+        },
+        {
+            "id": 22,
+            "mesh_file": "object_22.glb",
+            "texture_file": "object_22_tex.png",
+            "transform": {
+                "position": {
+                    "x": -0.778,
+                    "y": 5.31,
+                    "z": -1.589
+                },
+                "scale": {
+                    "x": 1.068,
+                    "y": 0.56,
+                    "z": 0.814
+                },
+                "rotation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                }
+            },
+            "bounds_2d": {
+                "xmin": 434,
+                "ymin": 463,
+                "xmax": 728,
+                "ymax": 549
+            },
+            "mean_depth": 0.531
+        },
+        {
+            "id": 23,
+            "mesh_file": "object_23.glb",
+            "texture_file": "object_23_tex.png",
+            "transform": {
+                "position": {
+                    "x": 1.094,
+                    "y": 0.7,
+                    "z": 2.533
+                },
+                "scale": {
+                    "x": 3.899,
+                    "y": 2.467,
+                    "z": 3.183
+                },
+                "rotation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                }
+            },
+            "bounds_2d": {
+                "xmin": 302,
+                "ymin": 0,
+                "xmax": 1375,
                 "ymax": 379
             },
             "mean_depth": 0.07
         },
         {
-            "id": 10,
-            "mesh_file": "object_10.obj",
-            "texture_file": "object_10_tex.png",
+            "id": 24,
+            "mesh_file": "object_24.glb",
+            "texture_file": "object_24_tex.png",
             "transform": {
                 "position": {
-                    "x": -0.044,
-                    "y": 5.499,
-                    "z": -1.621
+                    "x": 0.251,
+                    "y": 0.693,
+                    "z": 3.49
                 },
                 "scale": {
-                    "x": 1.592,
-                    "y": 0.553,
-                    "z": 1.072
+                    "x": 4.611,
+                    "y": 1.51,
+                    "z": 3.061
                 },
                 "rotation": {
                     "x": 0.0,
@@ -316,27 +722,27 @@
                 }
             },
             "bounds_2d": {
-                "xmin": 463,
-                "ymin": 466,
-                "xmax": 901,
-                "ymax": 551
+                "xmin": 88,
+                "ymin": 0,
+                "xmax": 1357,
+                "ymax": 232
             },
-            "mean_depth": 0.5499
+            "mean_depth": 0.0693
         },
         {
-            "id": 11,
-            "mesh_file": "object_11.obj",
-            "texture_file": "object_11_tex.png",
+            "id": 25,
+            "mesh_file": "object_25.glb",
+            "texture_file": "object_25_tex.png",
             "transform": {
                 "position": {
-                    "x": -0.723,
-                    "y": 8.252,
-                    "z": -4.225
+                    "x": 1.05,
+                    "y": 0.839,
+                    "z": 1.673
                 },
                 "scale": {
-                    "x": 0.396,
-                    "y": 0.762,
-                    "z": 0.579
+                    "x": 3.07,
+                    "y": 2.038,
+                    "z": 2.554
                 },
                 "rotation": {
                     "x": 0.0,
@@ -345,27 +751,462 @@
                 }
             },
             "bounds_2d": {
-                "xmin": 534,
-                "ymin": 650,
-                "xmax": 643,
-                "ymax": 767
+                "xmin": 410,
+                "ymin": 99,
+                "xmax": 1255,
+                "ymax": 412
             },
-            "mean_depth": 0.8252
+            "mean_depth": 0.0839
         },
         {
-            "id": 12,
-            "mesh_file": "object_12.obj",
-            "texture_file": "object_12_tex.png",
+            "id": 26,
+            "mesh_file": "object_26.glb",
+            "texture_file": "object_26_tex.png",
             "transform": {
                 "position": {
-                    "x": 0.738,
-                    "y": 6.382,
+                    "x": -0.203,
+                    "y": 6.206,
                     "z": -0.553
                 },
                 "scale": {
-                    "x": 0.251,
-                    "y": 0.645,
-                    "z": 0.448
+                    "x": 0.705,
+                    "y": 0.632,
+                    "z": 0.668
+                },
+                "rotation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                }
+            },
+            "bounds_2d": {
+                "xmin": 563,
+                "ymin": 378,
+                "xmax": 757,
+                "ymax": 475
+            },
+            "mean_depth": 0.6206
+        },
+        {
+            "id": 27,
+            "mesh_file": "object_27.glb",
+            "texture_file": "object_27_tex.png",
+            "transform": {
+                "position": {
+                    "x": -0.222,
+                    "y": 6.074,
+                    "z": -0.573
+                },
+                "scale": {
+                    "x": 0.68,
+                    "y": 0.612,
+                    "z": 0.646
+                },
+                "rotation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                }
+            },
+            "bounds_2d": {
+                "xmin": 564,
+                "ymin": 381,
+                "xmax": 751,
+                "ymax": 475
+            },
+            "mean_depth": 0.6074
+        },
+        {
+            "id": 28,
+            "mesh_file": "object_28.glb",
+            "texture_file": "object_28_tex.png",
+            "transform": {
+                "position": {
+                    "x": -0.033,
+                    "y": 5.513,
+                    "z": -1.621
+                },
+                "scale": {
+                    "x": 1.573,
+                    "y": 0.553,
+                    "z": 1.063
+                },
+                "rotation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                }
+            },
+            "bounds_2d": {
+                "xmin": 467,
+                "ymin": 466,
+                "xmax": 900,
+                "ymax": 551
+            },
+            "mean_depth": 0.5513
+        },
+        {
+            "id": 29,
+            "mesh_file": "object_29.glb",
+            "texture_file": "object_29_tex.png",
+            "transform": {
+                "position": {
+                    "x": -0.367,
+                    "y": 9.193,
+                    "z": -2.741
+                },
+                "scale": {
+                    "x": 0.73,
+                    "y": 0.71,
+                    "z": 0.72
+                },
+                "rotation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                }
+            },
+            "bounds_2d": {
+                "xmin": 537,
+                "ymin": 540,
+                "xmax": 738,
+                "ymax": 649
+            },
+            "mean_depth": 0.9193
+        },
+        {
+            "id": 30,
+            "mesh_file": "object_30.glb",
+            "texture_file": "object_30_tex.png",
+            "transform": {
+                "position": {
+                    "x": -0.683,
+                    "y": 8.235,
+                    "z": -4.219
+                },
+                "scale": {
+                    "x": 0.363,
+                    "y": 0.768,
+                    "z": 0.566
+                },
+                "rotation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                }
+            },
+            "bounds_2d": {
+                "xmin": 544,
+                "ymin": 649,
+                "xmax": 644,
+                "ymax": 767
+            },
+            "mean_depth": 0.8235
+        },
+        {
+            "id": 31,
+            "mesh_file": "object_31.glb",
+            "texture_file": "object_31_tex.png",
+            "transform": {
+                "position": {
+                    "x": -0.28,
+                    "y": 0.873,
+                    "z": 0.651
+                },
+                "scale": {
+                    "x": 1.195,
+                    "y": 0.781,
+                    "z": 0.988
+                },
+                "rotation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                }
+            },
+            "bounds_2d": {
+                "xmin": 485,
+                "ymin": 274,
+                "xmax": 814,
+                "ymax": 394
+            },
+            "mean_depth": 0.0873
+        },
+        {
+            "id": 32,
+            "mesh_file": "object_32.glb",
+            "texture_file": "object_32_tex.png",
+            "transform": {
+                "position": {
+                    "x": -0.458,
+                    "y": 5.395,
+                    "z": -1.608
+                },
+                "scale": {
+                    "x": 1.381,
+                    "y": 0.54,
+                    "z": 0.961
+                },
+                "rotation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                }
+            },
+            "bounds_2d": {
+                "xmin": 435,
+                "ymin": 466,
+                "xmax": 815,
+                "ymax": 549
+            },
+            "mean_depth": 0.5395
+        },
+        {
+            "id": 33,
+            "mesh_file": "object_33.glb",
+            "texture_file": "object_33_tex.png",
+            "transform": {
+                "position": {
+                    "x": 0.094,
+                    "y": 5.52,
+                    "z": -1.732
+                },
+                "scale": {
+                    "x": 1.366,
+                    "y": 0.43,
+                    "z": 0.898
+                },
+                "rotation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                }
+            },
+            "bounds_2d": {
+                "xmin": 513,
+                "ymin": 484,
+                "xmax": 889,
+                "ymax": 550
+            },
+            "mean_depth": 0.552
+        },
+        {
+            "id": 34,
+            "mesh_file": "object_34.glb",
+            "texture_file": "object_34_tex.png",
+            "transform": {
+                "position": {
+                    "x": 0.385,
+                    "y": 0.883,
+                    "z": 1.016
+                },
+                "scale": {
+                    "x": 1.076,
+                    "y": 0.846,
+                    "z": 0.961
+                },
+                "rotation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                }
+            },
+            "bounds_2d": {
+                "xmin": 593,
+                "ymin": 241,
+                "xmax": 889,
+                "ymax": 371
+            },
+            "mean_depth": 0.0883
+        },
+        {
+            "id": 35,
+            "mesh_file": "object_35.glb",
+            "texture_file": "object_35_tex.png",
+            "transform": {
+                "position": {
+                    "x": -0.109,
+                    "y": 5.478,
+                    "z": -1.634
+                },
+                "scale": {
+                    "x": 1.722,
+                    "y": 0.605,
+                    "z": 1.164
+                },
+                "rotation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                }
+            },
+            "bounds_2d": {
+                "xmin": 436,
+                "ymin": 463,
+                "xmax": 910,
+                "ymax": 556
+            },
+            "mean_depth": 0.5478
+        },
+        {
+            "id": 36,
+            "mesh_file": "object_36.glb",
+            "texture_file": "object_36_tex.png",
+            "transform": {
+                "position": {
+                    "x": 0.124,
+                    "y": 5.505,
+                    "z": -1.654
+                },
+                "scale": {
+                    "x": 1.475,
+                    "y": 0.586,
+                    "z": 1.031
+                },
+                "rotation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                }
+            },
+            "bounds_2d": {
+                "xmin": 502,
+                "ymin": 466,
+                "xmax": 908,
+                "ymax": 556
+            },
+            "mean_depth": 0.5505
+        },
+        {
+            "id": 37,
+            "mesh_file": "object_37.glb",
+            "texture_file": "object_37_tex.png",
+            "transform": {
+                "position": {
+                    "x": 0.625,
+                    "y": 0.699,
+                    "z": 3.783
+                },
+                "scale": {
+                    "x": 3.416,
+                    "y": 1.217,
+                    "z": 2.317
+                },
+                "rotation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                }
+            },
+            "bounds_2d": {
+                "xmin": 304,
+                "ymin": 0,
+                "xmax": 1244,
+                "ymax": 187
+            },
+            "mean_depth": 0.0699
+        },
+        {
+            "id": 38,
+            "mesh_file": "object_38.glb",
+            "texture_file": "object_38_tex.png",
+            "transform": {
+                "position": {
+                    "x": 0.65,
+                    "y": 0.76,
+                    "z": 2.715
+                },
+                "scale": {
+                    "x": 0.992,
+                    "y": 0.892,
+                    "z": 0.942
+                },
+                "rotation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                }
+            },
+            "bounds_2d": {
+                "xmin": 641,
+                "ymin": 107,
+                "xmax": 914,
+                "ymax": 244
+            },
+            "mean_depth": 0.076
+        },
+        {
+            "id": 39,
+            "mesh_file": "object_39.glb",
+            "texture_file": "object_39_tex.png",
+            "transform": {
+                "position": {
+                    "x": 0.389,
+                    "y": 0.876,
+                    "z": 1.061
+                },
+                "scale": {
+                    "x": 1.079,
+                    "y": 0.801,
+                    "z": 0.94
+                },
+                "rotation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                }
+            },
+            "bounds_2d": {
+                "xmin": 593,
+                "ymin": 241,
+                "xmax": 890,
+                "ymax": 364
+            },
+            "mean_depth": 0.0876
+        },
+        {
+            "id": 40,
+            "mesh_file": "object_40.glb",
+            "texture_file": "object_40_tex.png",
+            "transform": {
+                "position": {
+                    "x": 0.854,
+                    "y": 0.822,
+                    "z": 0.983
+                },
+                "scale": {
+                    "x": 0.687,
+                    "y": 0.879,
+                    "z": 0.783
+                },
+                "rotation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                }
+            },
+            "bounds_2d": {
+                "xmin": 711,
+                "ymin": 241,
+                "xmax": 900,
+                "ymax": 376
+            },
+            "mean_depth": 0.0822
+        },
+        {
+            "id": 41,
+            "mesh_file": "object_41.glb",
+            "texture_file": "object_41_tex.png",
+            "transform": {
+                "position": {
+                    "x": 0.741,
+                    "y": 6.372,
+                    "z": -0.547
+                },
+                "scale": {
+                    "x": 0.254,
+                    "y": 0.651,
+                    "z": 0.453
                 },
                 "rotation": {
                     "x": 0.0,
@@ -375,26 +1216,84 @@
             },
             "bounds_2d": {
                 "xmin": 755,
-                "ymin": 377,
-                "xmax": 824,
+                "ymin": 376,
+                "xmax": 825,
                 "ymax": 476
             },
-            "mean_depth": 0.6382
+            "mean_depth": 0.6372
         },
         {
-            "id": 13,
-            "mesh_file": "object_13.obj",
-            "texture_file": "object_13_tex.png",
+            "id": 42,
+            "mesh_file": "object_42.glb",
+            "texture_file": "object_42_tex.png",
             "transform": {
                 "position": {
-                    "x": 1.824,
-                    "y": 0.611,
-                    "z": 4.141
+                    "x": 1.617,
+                    "y": 0.653,
+                    "z": 3.509
                 },
                 "scale": {
-                    "x": 1.148,
-                    "y": 0.859,
-                    "z": 1.004
+                    "x": 1.326,
+                    "y": 1.452,
+                    "z": 1.389
+                },
+                "rotation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                }
+            },
+            "bounds_2d": {
+                "xmin": 728,
+                "ymin": 3,
+                "xmax": 1093,
+                "ymax": 226
+            },
+            "mean_depth": 0.0653
+        },
+        {
+            "id": 43,
+            "mesh_file": "object_43.glb",
+            "texture_file": "object_43_tex.png",
+            "transform": {
+                "position": {
+                    "x": 1.337,
+                    "y": 5.625,
+                    "z": -3.978
+                },
+                "scale": {
+                    "x": 0.276,
+                    "y": 1.009,
+                    "z": 0.643
+                },
+                "rotation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                }
+            },
+            "bounds_2d": {
+                "xmin": 834,
+                "ymin": 612,
+                "xmax": 910,
+                "ymax": 767
+            },
+            "mean_depth": 0.5625
+        },
+        {
+            "id": 44,
+            "mesh_file": "object_44.glb",
+            "texture_file": "object_44_tex.png",
+            "transform": {
+                "position": {
+                    "x": 1.828,
+                    "y": 0.611,
+                    "z": 4.147
+                },
+                "scale": {
+                    "x": 1.152,
+                    "y": 0.853,
+                    "z": 1.002
                 },
                 "rotation": {
                     "x": 0.0,
@@ -405,25 +1304,54 @@
             "bounds_2d": {
                 "xmin": 781,
                 "ymin": 0,
-                "xmax": 1097,
-                "ymax": 132
+                "xmax": 1098,
+                "ymax": 131
             },
             "mean_depth": 0.0611
         },
         {
-            "id": 14,
-            "mesh_file": "object_14.obj",
-            "texture_file": "object_14_tex.png",
+            "id": 45,
+            "mesh_file": "object_45.glb",
+            "texture_file": "object_45_tex.png",
             "transform": {
                 "position": {
-                    "x": 3.209,
-                    "y": 0.652,
-                    "z": 3.646
+                    "x": 2.108,
+                    "y": 0.632,
+                    "z": 3.6
                 },
                 "scale": {
-                    "x": 1.784,
-                    "y": 1.354,
-                    "z": 1.569
+                    "x": 1.424,
+                    "y": 1.27,
+                    "z": 1.347
+                },
+                "rotation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                }
+            },
+            "bounds_2d": {
+                "xmin": 782,
+                "ymin": 10,
+                "xmax": 1174,
+                "ymax": 205
+            },
+            "mean_depth": 0.0632
+        },
+        {
+            "id": 46,
+            "mesh_file": "object_46.glb",
+            "texture_file": "object_46_tex.png",
+            "transform": {
+                "position": {
+                    "x": 1.893,
+                    "y": 2.603,
+                    "z": -0.97
+                },
+                "scale": {
+                    "x": 0.469,
+                    "y": 1.243,
+                    "z": 0.856
                 },
                 "rotation": {
                     "x": 0.0,
@@ -433,26 +1361,26 @@
             },
             "bounds_2d": {
                 "xmin": 884,
-                "ymin": 0,
-                "xmax": 1375,
-                "ymax": 208
+                "ymin": 363,
+                "xmax": 1013,
+                "ymax": 554
             },
-            "mean_depth": 0.0652
+            "mean_depth": 0.2603
         },
         {
-            "id": 15,
-            "mesh_file": "object_15.obj",
-            "texture_file": "object_15_tex.png",
+            "id": 47,
+            "mesh_file": "object_47.glb",
+            "texture_file": "object_47_tex.png",
             "transform": {
                 "position": {
-                    "x": 3.278,
-                    "y": 0.666,
-                    "z": 3.249
+                    "x": 2.951,
+                    "y": 0.649,
+                    "z": 3.418
                 },
                 "scale": {
-                    "x": 0.967,
-                    "y": 0.671,
-                    "z": 0.819
+                    "x": 1.766,
+                    "y": 1.53,
+                    "z": 1.648
                 },
                 "rotation": {
                     "x": 0.0,
@@ -461,27 +1389,201 @@
                 }
             },
             "bounds_2d": {
-                "xmin": 1006,
+                "xmin": 851,
+                "ymin": 4,
+                "xmax": 1337,
+                "ymax": 239
+            },
+            "mean_depth": 0.0649
+        },
+        {
+            "id": 48,
+            "mesh_file": "object_48.glb",
+            "texture_file": "object_48_tex.png",
+            "transform": {
+                "position": {
+                    "x": 2.954,
+                    "y": 0.885,
+                    "z": 0.827
+                },
+                "scale": {
+                    "x": 2.039,
+                    "y": 3.027,
+                    "z": 2.533
+                },
+                "rotation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                }
+            },
+            "bounds_2d": {
+                "xmin": 814,
+                "ymin": 88,
+                "xmax": 1375,
+                "ymax": 553
+            },
+            "mean_depth": 0.0885
+        },
+        {
+            "id": 49,
+            "mesh_file": "object_49.glb",
+            "texture_file": "object_49_tex.png",
+            "transform": {
+                "position": {
+                    "x": 2.289,
+                    "y": 0.842,
+                    "z": 0.944
+                },
+                "scale": {
+                    "x": 1.141,
+                    "y": 1.074,
+                    "z": 1.108
+                },
+                "rotation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                }
+            },
+            "bounds_2d": {
+                "xmin": 846,
+                "ymin": 229,
+                "xmax": 1160,
+                "ymax": 394
+            },
+            "mean_depth": 0.0842
+        },
+        {
+            "id": 50,
+            "mesh_file": "object_50.glb",
+            "texture_file": "object_50_tex.png",
+            "transform": {
+                "position": {
+                    "x": 2.965,
+                    "y": 5.137,
+                    "z": -1.204
+                },
+                "scale": {
+                    "x": 0.698,
+                    "y": 1.035,
+                    "z": 0.866
+                },
+                "rotation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                }
+            },
+            "bounds_2d": {
+                "xmin": 1000,
+                "ymin": 397,
+                "xmax": 1192,
+                "ymax": 556
+            },
+            "mean_depth": 0.5137
+        },
+        {
+            "id": 51,
+            "mesh_file": "object_51.glb",
+            "texture_file": "object_51_tex.png",
+            "transform": {
+                "position": {
+                    "x": 3.274,
+                    "y": 0.655,
+                    "z": 3.704
+                },
+                "scale": {
+                    "x": 1.719,
+                    "y": 1.296,
+                    "z": 1.507
+                },
+                "rotation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                }
+            },
+            "bounds_2d": {
+                "xmin": 902,
+                "ymin": 0,
+                "xmax": 1375,
+                "ymax": 199
+            },
+            "mean_depth": 0.0655
+        },
+        {
+            "id": 52,
+            "mesh_file": "object_52.glb",
+            "texture_file": "object_52_tex.png",
+            "transform": {
+                "position": {
+                    "x": 3.278,
+                    "y": 0.666,
+                    "z": 3.255
+                },
+                "scale": {
+                    "x": 0.959,
+                    "y": 0.664,
+                    "z": 0.812
+                },
+                "rotation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                }
+            },
+            "bounds_2d": {
+                "xmin": 1007,
                 "ymin": 83,
-                "xmax": 1272,
-                "ymax": 186
+                "xmax": 1271,
+                "ymax": 185
             },
             "mean_depth": 0.0666
         },
         {
-            "id": 16,
-            "mesh_file": "object_16.obj",
-            "texture_file": "object_16_tex.png",
+            "id": 53,
+            "mesh_file": "object_53.glb",
+            "texture_file": "object_53_tex.png",
+            "transform": {
+                "position": {
+                    "x": 3.154,
+                    "y": 0.806,
+                    "z": 2.715
+                },
+                "scale": {
+                    "x": 1.214,
+                    "y": 0.645,
+                    "z": 0.929
+                },
+                "rotation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                }
+            },
+            "bounds_2d": {
+                "xmin": 955,
+                "ymin": 126,
+                "xmax": 1289,
+                "ymax": 225
+            },
+            "mean_depth": 0.0806
+        },
+        {
+            "id": 54,
+            "mesh_file": "object_54.glb",
+            "texture_file": "object_54_tex.png",
             "transform": {
                 "position": {
                     "x": 2.758,
                     "y": 1.604,
-                    "z": 0.716
+                    "z": 0.762
                 },
                 "scale": {
                     "x": 0.28,
-                    "y": 0.846,
-                    "z": 0.563
+                    "y": 0.905,
+                    "z": 0.592
                 },
                 "rotation": {
                     "x": 0.0,
@@ -491,26 +1593,26 @@
             },
             "bounds_2d": {
                 "xmin": 1029,
-                "ymin": 264,
+                "ymin": 256,
                 "xmax": 1106,
-                "ymax": 394
+                "ymax": 395
             },
             "mean_depth": 0.1604
         },
         {
-            "id": 17,
-            "mesh_file": "object_17.obj",
-            "texture_file": "object_17_tex.png",
+            "id": 55,
+            "mesh_file": "object_55.glb",
+            "texture_file": "object_55_tex.png",
             "transform": {
                 "position": {
-                    "x": 3.085,
-                    "y": 5.291,
-                    "z": -1.204
+                    "x": 3.844,
+                    "y": 9.448,
+                    "z": -2.734
                 },
                 "scale": {
-                    "x": 0.81,
-                    "y": 1.035,
-                    "z": 0.923
+                    "x": 1.097,
+                    "y": 0.716,
+                    "z": 0.907
                 },
                 "rotation": {
                     "x": 0.0,
@@ -519,56 +1621,27 @@
                 }
             },
             "bounds_2d": {
-                "xmin": 1001,
-                "ymin": 397,
-                "xmax": 1224,
-                "ymax": 556
+                "xmin": 1066,
+                "ymin": 539,
+                "xmax": 1368,
+                "ymax": 649
             },
-            "mean_depth": 0.5291
+            "mean_depth": 0.9448
         },
         {
-            "id": 18,
-            "mesh_file": "object_18.obj",
-            "texture_file": "object_18_tex.png",
-            "transform": {
-                "position": {
-                    "x": 3.289,
-                    "y": 5.576,
-                    "z": -1.224
-                },
-                "scale": {
-                    "x": 0.52,
-                    "y": 0.742,
-                    "z": 0.631
-                },
-                "rotation": {
-                    "x": 0.0,
-                    "y": 0.0,
-                    "z": 0.0
-                }
-            },
-            "bounds_2d": {
-                "xmin": 1069,
-                "ymin": 421,
-                "xmax": 1212,
-                "ymax": 535
-            },
-            "mean_depth": 0.5576
-        },
-        {
-            "id": 19,
-            "mesh_file": "object_19.obj",
-            "texture_file": "object_19_tex.png",
+            "id": 56,
+            "mesh_file": "object_56.glb",
+            "texture_file": "object_56_tex.png",
             "transform": {
                 "position": {
                     "x": 3.169,
-                    "y": 7.163,
-                    "z": -4.219
+                    "y": 7.162,
+                    "z": -4.225
                 },
                 "scale": {
                     "x": 0.371,
-                    "y": 0.768,
-                    "z": 0.569
+                    "y": 0.762,
+                    "z": 0.566
                 },
                 "rotation": {
                     "x": 0.0,
@@ -578,26 +1651,84 @@
             },
             "bounds_2d": {
                 "xmin": 1073,
-                "ymin": 649,
+                "ymin": 650,
                 "xmax": 1175,
                 "ymax": 767
             },
-            "mean_depth": 0.7163
+            "mean_depth": 0.7162
         },
         {
-            "id": 20,
-            "mesh_file": "object_20.obj",
-            "texture_file": "object_20_tex.png",
+            "id": 57,
+            "mesh_file": "object_57.glb",
+            "texture_file": "object_57_tex.png",
+            "transform": {
+                "position": {
+                    "x": 3.096,
+                    "y": 5.341,
+                    "z": -1.198
+                },
+                "scale": {
+                    "x": 0.828,
+                    "y": 1.042,
+                    "z": 0.935
+                },
+                "rotation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                }
+            },
+            "bounds_2d": {
+                "xmin": 1000,
+                "ymin": 396,
+                "xmax": 1228,
+                "ymax": 556
+            },
+            "mean_depth": 0.5341
+        },
+        {
+            "id": 58,
+            "mesh_file": "object_58.glb",
+            "texture_file": "object_58_tex.png",
+            "transform": {
+                "position": {
+                    "x": 3.125,
+                    "y": 5.462,
+                    "z": -1.126
+                },
+                "scale": {
+                    "x": 0.807,
+                    "y": 0.957,
+                    "z": 0.882
+                },
+                "rotation": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                }
+            },
+            "bounds_2d": {
+                "xmin": 1007,
+                "ymin": 397,
+                "xmax": 1229,
+                "ymax": 544
+            },
+            "mean_depth": 0.5462
+        },
+        {
+            "id": 59,
+            "mesh_file": "object_59.glb",
+            "texture_file": "object_59_tex.png",
             "transform": {
                 "position": {
                     "x": 4.175,
-                    "y": 5.883,
-                    "z": 0.866
+                    "y": 5.886,
+                    "z": 0.872
                 },
                 "scale": {
                     "x": 0.302,
-                    "y": 0.632,
-                    "z": 0.467
+                    "y": 0.625,
+                    "z": 0.463
                 },
                 "rotation": {
                     "x": 0.0,
@@ -609,24 +1740,24 @@
                 "xmin": 1221,
                 "ymin": 269,
                 "xmax": 1304,
-                "ymax": 366
+                "ymax": 365
             },
-            "mean_depth": 0.5883
+            "mean_depth": 0.5886
         },
         {
-            "id": 21,
-            "mesh_file": "object_21.obj",
-            "texture_file": "object_21_tex.png",
+            "id": 60,
+            "mesh_file": "object_60.glb",
+            "texture_file": "object_60_tex.png",
             "transform": {
                 "position": {
                     "x": 4.462,
-                    "y": 5.83,
-                    "z": -0.892
+                    "y": 5.736,
+                    "z": -0.879
                 },
                 "scale": {
                     "x": 0.531,
-                    "y": 1.139,
-                    "z": 0.835
+                    "y": 1.113,
+                    "z": 0.822
                 },
                 "rotation": {
                     "x": 0.0,
@@ -636,26 +1767,26 @@
             },
             "bounds_2d": {
                 "xmin": 1229,
-                "ymin": 365,
+                "ymin": 366,
                 "xmax": 1375,
-                "ymax": 540
+                "ymax": 537
             },
-            "mean_depth": 0.583
+            "mean_depth": 0.5736
         },
         {
-            "id": 22,
-            "mesh_file": "object_22.obj",
-            "texture_file": "object_22_tex.png",
+            "id": 61,
+            "mesh_file": "object_61.glb",
+            "texture_file": "object_61_tex.png",
             "transform": {
                 "position": {
-                    "x": 3.467,
-                    "y": 9.433,
-                    "z": -2.734
+                    "x": 4.462,
+                    "y": 5.826,
+                    "z": -0.859
                 },
                 "scale": {
-                    "x": 0.821,
-                    "y": 0.716,
-                    "z": 0.769
+                    "x": 0.531,
+                    "y": 1.159,
+                    "z": 0.845
                 },
                 "rotation": {
                     "x": 0.0,
@@ -664,12 +1795,12 @@
                 }
             },
             "bounds_2d": {
-                "xmin": 1052,
-                "ymin": 539,
-                "xmax": 1278,
-                "ymax": 649
+                "xmin": 1229,
+                "ymin": 361,
+                "xmax": 1375,
+                "ymax": 539
             },
-            "mean_depth": 0.9433
+            "mean_depth": 0.5826
         }
     ]
 }

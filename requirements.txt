@@ -1,0 +1,22 @@
+# Core PyTorch dependencies (usually preinstalled on GPU cloud instances)
+torch>=2.0.0
+torchvision>=0.15.0
+
+# Hugging Face AI Models & Pipelines
+transformers>=4.45.0
+diffusers>=0.29.0
+accelerate>=0.26.0
+huggingface_hub>=0.23.0
+
+# VLM utilities
+qwen-vl-utils>=0.0.4
+
+# Data & Image processing
+numpy>=1.24.0
+pillow>=10.0.0
+
+# 3D Generation & Format export (Hunyuan3D-2, TripoSR, StableFast3D)
+trimesh>=4.0.0
+einops>=0.7.0
+scipy>=1.10.0
+pymeshlab>=2023.12; platform_system != "Windows"  # Optional: For mesh decimation on Linux systems

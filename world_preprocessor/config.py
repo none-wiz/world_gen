@@ -29,3 +29,7 @@ TRIPOSR_MODEL_ID = "stabilityai/TripoSR"
 # Optimization flags
 ENABLE_CPU_OFFLOAD = True
 ENABLE_ATTENTION_SLICING = True
+
+# 5. VLM Configuration
+VLM_MODEL_ID = "Qwen/Qwen2-VL-2B-Instruct"
+VLM_DTYPE = torch.float16 if DEVICE == "cuda" else torch.float32
