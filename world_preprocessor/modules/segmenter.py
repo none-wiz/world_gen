@@ -63,11 +63,40 @@ class ObjectSegmenter:
             original_sizes = inputs.get("original_sizes", None)
             reshaped_input_sizes = inputs.get("reshaped_input_sizes", None)
             
-            masks = self.processor.post_process_masks(
-                outputs.pred_masks,
-                original_sizes,
-                reshaped_input_sizes
-            )
+            try:
+                # Use kwargs to avoid positional mismatch (like overwriting mask_threshold with None)
+                post_kwargs = {}
+                if original_sizes is not None:
+                    post_kwargs["original_sizes"] = original_sizes
+                if reshaped_input_sizes is not None:
+                    post_kwargs["reshaped_input_sizes"] = reshaped_input_sizes
+                
+                masks = self.processor.post_process_masks(
+                    outputs.pred_masks,
+                    **post_kwargs
+                )
+            except Exception as e:
+                logger.warning(f"SAM2 post_process_masks failed: {e}. Running manual interpolation fallback.")
+                # Manual resize fallback using torch interpolation
+                masks = []
+                for idx, pred_mask in enumerate(outputs.pred_masks):
+                    # pred_mask shape: [num_masks, H, W]
+                    target_h, target_w = image.size[1], image.size[0]
+                    if original_sizes is not None:
+                        try:
+                            target_h = int(original_sizes[idx][0])
+                            target_w = int(original_sizes[idx][1])
+                        except Exception:
+                            pass
+                    
+                    # Interpolate [num_masks, H, W] -> [1, num_masks, target_h, target_w] -> [num_masks, target_h, target_w]
+                    upsampled = torch.nn.functional.interpolate(
+                        pred_mask.unsqueeze(0).float(),
+                        size=(target_h, target_w),
+                        mode="bilinear",
+                        align_corners=False
+                    ).squeeze(0)
+                    masks.append(upsampled > 0.0)
             
             for mask_list in masks:
                 # Get the highest confidence mask for each point prompt
