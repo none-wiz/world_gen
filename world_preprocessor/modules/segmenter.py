@@ -18,7 +18,7 @@ class ObjectSegmenter:
             torch_dtype=SAM2_DTYPE
         ).to(DEVICE)
         
-    def generate_masks(self, image: Image.Image, grid_size: int = 8) -> List[Dict[str, Any]]:
+    def generate_masks(self, image: Image.Image, grid_size: int = 16) -> List[Dict[str, Any]]:
         """
         Generates individual object masks by prompting SAM 2 with a grid of point anchors.
         Returns a list of dictionaries containing the binary masks and bounding boxes.

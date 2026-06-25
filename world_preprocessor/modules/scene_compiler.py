@@ -47,8 +47,12 @@ class SceneCompiler:
             scale_x = (xmax - xmin) / img_w
             scale_y = (ymax - ymin) / img_h
             
-            # Determine filenames
-            mesh_filename = f"object_{obj_id}.obj"  # fallback or GLB
+            # Determine filenames (check if high-quality .glb exists, else use .obj fallback)
+            glb_filename = f"object_{obj_id}.glb"
+            if os.path.exists(os.path.join(self.output_dir, glb_filename)):
+                mesh_filename = glb_filename
+            else:
+                mesh_filename = f"object_{obj_id}.obj"
             texture_filename = f"object_{obj_id}_tex.png"
             
             # Prepare metadata entry

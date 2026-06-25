@@ -3,12 +3,12 @@ import torch
 from PIL import Image
 import logging
 
-from config import DEVICE, SF3D_MODEL_ID, TRIPOSR_MODEL_ID
+from config import DEVICE, SF3D_MODEL_ID, TRIPOSR_MODEL_ID, HUNYUAN_MODEL_ID, HUNYUAN_SUBFOLDER
 
 logger = logging.getLogger("MeshGenerator")
 
 class MeshGenerator:
-    def __init__(self, generator_type: str = "stablefast3d"):
+    def __init__(self, generator_type: str = "hunyuan3d"):
         self.generator_type = generator_type.lower()
         self.model = None
         self.pipeline = None
@@ -17,15 +17,21 @@ class MeshGenerator:
         
         # Try to load the models if dependencies are installed, otherwise use fallbacks
         try:
-            if self.generator_type == "stablefast3d":
-                # Check for StableFast3D (sf3d) package
+            if self.generator_type == "hunyuan3d":
+                from hy3dgen.shapegen import Hunyuan3DDiTFlowMatchingPipeline
+                logger.info("hy3dgen package found! Loading Hunyuan3D-2mini pretrained weights...")
+                self.pipeline = Hunyuan3DDiTFlowMatchingPipeline.from_pretrained(
+                    HUNYUAN_MODEL_ID,
+                    subfolder=HUNYUAN_SUBFOLDER,
+                    use_safetensors=True,
+                    device=DEVICE
+                )
+            elif self.generator_type == "stablefast3d":
                 import sf3d
                 from sf3d.models.network import StableFast3D
                 logger.info("sf3d package found! Loading pretrained weights...")
-                # In standard sf3d implementations:
                 # self.model = StableFast3D.from_pretrained(SF3D_MODEL_ID).to(DEVICE)
             elif self.generator_type == "triposr":
-                # Check for TripoSR (tsr) package
                 import tsr
                 from tsr.system import TSR
                 logger.info("tsr package found! Loading pretrained weights...")
@@ -34,26 +40,45 @@ class MeshGenerator:
             logger.warning(
                 f"Could not import libraries for '{self.generator_type}'. "
                 "The pipeline will fall back to generating a textured flat/billboard mesh representation. "
-                "To use the real 3D generation, install the required packages (e.g., pip install sf3d or tsr)."
+                f"To use real 3D generation with {self.generator_type}, install the required packages (e.g., git clone and install Tencent/Hunyuan3D-2)."
             )
 
     def generate_mesh(self, image: Image.Image, output_path: str):
         """
         Converts the transparent foreground object image into a 3D mesh (.glb).
         """
-        if self.model is not None:
-            # Run real inference
+        # Ensure input image is RGBA (Hunyuan3D expects transparent background inputs)
+        rgba_image = image.convert("RGBA")
+        
+        if self.pipeline is not None and self.generator_type == "hunyuan3d":
+            try:
+                logger.info(f"Generating high-quality 3D mesh using Hunyuan3D-2mini for: {output_path}")
+                # Run the flow matching shape pipeline
+                with torch.inference_mode():
+                    mesh = self.pipeline(
+                        image=rgba_image,
+                        num_inference_steps=30,
+                        octree_resolution=380,
+                        num_chunks=20000,
+                        output_type='trimesh'
+                    )[0]
+                    
+                # Export as GLB
+                glb_path = os.path.splitext(output_path)[0] + ".glb"
+                mesh.export(glb_path)
+                logger.info(f"Exported Hunyuan3D-2 mesh to: {glb_path}")
+                return
+            except Exception as e:
+                logger.error(f"Failed to generate mesh using Hunyuan3D-2: {e}. Falling back to billboard.")
+                
+        elif self.model is not None:
+            # Run other models
             with torch.inference_mode():
-                # Perform the conversion based on library specifications
-                # and save the mesh to output_path.
-                logger.info(f"Generating 3D mesh for {output_path} using {self.generator_type} model...")
-                # Placeholder for real model call matching installed API:
-                # mesh = self.model(image)
-                # mesh.export(output_path)
                 pass
-        else:
-            # Fallback textured billboard mesh generator (extremely useful for pipeline testing!)
-            self._create_billboard_mesh(image, output_path)
+            return
+            
+        # Fallback textured billboard mesh generator (extremely useful for pipeline testing!)
+        self._create_billboard_mesh(image, output_path)
 
     def _create_billboard_mesh(self, image: Image.Image, output_path: str):
         """
