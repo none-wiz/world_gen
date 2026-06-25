@@ -30,9 +30,11 @@ class ObjectSegmenter:
         ys = np.linspace(h * 0.1, h * 0.9, grid_size)
         
         input_points = []
+        input_labels = []
         for x in xs:
             for y in ys:
-                input_points.append([[x, y]])
+                input_points.append([[[x, y]]])
+                input_labels.append([[1]])
                 
         # To avoid overloading memory, run inference in batches of point prompts
         batch_size = 16
@@ -40,12 +42,14 @@ class ObjectSegmenter:
         
         for i in range(0, len(input_points), batch_size):
             batch_pts = input_points[i:i + batch_size]
+            batch_lbls = input_labels[i:i + batch_size]
             
             # Prepare inputs
             # The Sam2Processor expects list of points for the image
             inputs = self.processor(
                 images=[image] * len(batch_pts),
                 input_points=batch_pts,
+                input_labels=batch_lbls,
                 return_tensors="pt"
             ).to(DEVICE)
             
