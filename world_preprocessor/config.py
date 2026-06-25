@@ -15,7 +15,7 @@ SAM2_DTYPE = torch.float16 if DEVICE == "cuda" else torch.float32
 DEPTH_MODEL_ID = "depth-anything/Depth-Anything-V2-Small-hf"
 
 # 3. Inpainting Configuration
-INPAINT_MODEL_ID = "stabilityai/stable-diffusion-2-inpainting"
+INPAINT_MODEL_ID = "runwayml/stable-diffusion-inpainting"
 INPAINT_DTYPE = torch.float16 if DEVICE == "cuda" else torch.float32
 
 # 4. 3D Mesh Generation Configuration

@@ -104,18 +104,31 @@ def run_pipeline(image_path: str, output_dir: str):
                 combined_mask = np.logical_or(combined_mask, seg["mask"])
                 
             logger.info(f"Loading Inpainting pipeline: {INPAINT_MODEL_ID}...")
-            inpaint_pipe = StableDiffusionInpaintPipeline.from_pretrained(
-                INPAINT_MODEL_ID,
-                torch_dtype=INPAINT_DTYPE
-            ).to(DEVICE)
+            try:
+                inpaint_pipe = StableDiffusionInpaintPipeline.from_pretrained(
+                    INPAINT_MODEL_ID,
+                    torch_dtype=INPAINT_DTYPE
+                ).to(DEVICE)
+                
+                # Perform inpainting
+                inpainted_bg = run_inpainting_pipeline(inpaint_pipe, input_image, combined_mask)
+                del inpaint_pipe
+            except Exception as e:
+                logger.warning(
+                    f"Failed to run Stable Diffusion inpainting: {e}. "
+                    "Falling back to basic PIL blur inpainting to keep the pipeline alive."
+                )
+                from PIL import ImageFilter
+                mask_uint8 = (combined_mask * 255).astype(np.uint8)
+                mask_image = Image.fromarray(mask_uint8, mode="L")
+                
+                # Blend blurred background to fill the foreground holes roughly
+                blurred = input_image.filter(ImageFilter.GaussianBlur(radius=20))
+                inpainted_bg = Image.composite(blurred, input_image, mask_image)
             
-            # Perform inpainting
-            inpainted_bg = run_inpainting_pipeline(inpaint_pipe, input_image, combined_mask)
             bg_path = os.path.join(output_dir, "inpainted_background.png")
             inpainted_bg.save(bg_path, format="PNG")
-            logger.info(f"Saved in-painted background image to: {bg_path}")
-            
-            del inpaint_pipe
+            logger.info(f"Saved background image to: {bg_path}")
     else:
         logger.warning("No foreground segments found. Skipping background inpainting.")
 
