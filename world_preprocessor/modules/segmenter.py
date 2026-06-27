@@ -145,3 +145,131 @@ class ObjectSegmenter:
             
         logger.info(f"Segmented {len(results)} individual objects from the image.")
         return results
+
+import numpy as np
+import torch
+from PIL import Image
+from transformers import Sam3Model, Sam3Processor
+import logging
+from typing import List, Dict, Any
+from tqdm import tqdm
+
+from config import SAM2_DTYPE, DEVICE
+
+# Your updated Model ID configuration
+SAM3_MODEL_ID = "facebook/sam3"
+
+logger = logging.getLogger("Segmenter")
+
+class ObjectSegmenterV3:
+    def __init__(self):
+        logger.info(f"Initializing SAM 3 ObjectSegmenter")
+        logger.info(f"Target Compute Device: {DEVICE}")
+        if torch.cuda.is_available() and "cuda" in str(DEVICE):
+            logger.info(f"CUDA Device Name: {torch.cuda.get_device_name(DEVICE)}")
+            logger.info(f"CUDA Memory Allocated: {torch.cuda.memory_allocated(DEVICE) / 1024**2:.2f} MB")
+            
+        logger.info(f"Loading SAM 3 Model: {SAM3_MODEL_ID} using dtype={SAM2_DTYPE}...")
+        
+        # --- FIX: Pass token=True to authorize the gated repo download ---
+        self.processor = Sam3Processor.from_pretrained(
+            SAM3_MODEL_ID, 
+            token=True
+        )
+        self.model = Sam3Model.from_pretrained(
+            SAM3_MODEL_ID, 
+            torch_dtype=SAM2_DTYPE,
+            token=True
+        ).to(DEVICE)
+        # -----------------------------------------------------------------
+        
+        self.model.eval()
+        
+    def generate_masks(self, image: Image.Image, text_queries: List[str] = None, score_threshold: float = 0.2, mask_threshold: float = 0.2) -> List[Dict[str, Any]]:
+        """
+        Generates individual object masks using open-vocabulary SAM 3 text queries.
+        
+        Args:
+            image: PIL Input image.
+            text_queries: List of concept strings to search for (e.g., ["chair", "mug", "person"]).
+                         Defaults to ["object"] for general extraction.
+        """
+        w, h = image.size
+        all_masks = []
+        all_scores = []
+        
+        logger.info(f"Running SAM 3 Promptable Concept Segmentation for queries: {text_queries}")
+        if text_queries is None: 
+          text_queries = ["object"]
+        # Process each semantic concept query
+        for query in tqdm(text_queries, desc="Processing SAM3 Text Queries", unit="concept"):
+            inputs = self.processor(
+                images=image, 
+                text=query, 
+                return_tensors="pt"
+            ).to(DEVICE)
+            
+            # Match precision type
+            if SAM2_DTYPE in [torch.float16, torch.bfloat16]:
+                inputs["pixel_values"] = inputs["pixel_values"].to(SAM2_DTYPE)
+                
+            with torch.inference_mode():
+                outputs = self.model(**inputs)
+                
+            # SAM 3 native post-processing scales and threshold filters the results automatically
+            processed_results = self.processor.post_process_instance_segmentation(
+                outputs,
+                threshold=score_threshold,
+                mask_threshold=mask_threshold,
+                target_sizes=[[h, w]]
+            )[0]
+            
+            # Extract returned instances
+            pred_masks = processed_results["masks"]     # Shape: [num_instances, H, W]
+            pred_scores = processed_results["scores"]   # Shape: [num_instances]
+            
+            for idx in range(pred_masks.shape[0]):
+                binary_mask = pred_masks[idx].cpu().numpy()
+                all_masks.append(binary_mask)
+                all_scores.append(float(pred_scores[idx]))
+
+        # Deduplicate overlapping boundaries across different target queries
+        unique_masks = []
+        unique_scores = []
+        
+        for mask, score in tqdm(zip(all_masks, all_scores), total=len(all_masks), desc="De-duplicating cross-query instances", unit="mask"):
+            pixel_count = np.sum(mask)
+            total_pixels = w * h
+            if pixel_count < 0.001 * total_pixels or pixel_count > 0.85 * total_pixels:
+                continue
+                
+            is_duplicate = False
+            for u_mask in unique_masks:
+                intersection = np.logical_and(mask, u_mask).sum()
+                union = np.logical_or(mask, u_mask).sum()
+                iou = intersection / union if union > 0 else 0
+                if iou > 0.65:
+                    is_duplicate = True
+                    break
+                    
+            if not is_duplicate:
+                unique_masks.append(mask)
+                unique_scores.append(score)
+                
+        results = []
+        for idx, (mask, score) in enumerate(zip(unique_masks, unique_scores)):
+            # Calculate final bounding boxes from filtered arrays
+            rows = np.any(mask, axis=1)
+            cols = np.any(mask, axis=0)
+            ymin, ymax = np.where(rows)[0][[0, -1]]
+            xmin, xmax = np.where(cols)[0][[0, -1]]
+            
+            results.append({
+                "id": idx,
+                "mask": mask,
+                "confidence": score,
+                "bbox": [int(ymin), int(xmin), int(ymax), int(xmax)]
+            })
+            
+        logger.info(f"SAM 3 extracted {len(results)} distinct objects from concept inquiries.")
+        return results

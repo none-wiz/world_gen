@@ -15,7 +15,7 @@ logger = logging.getLogger("PipelineOrchestrator")
 from config import OUTPUT_DIR, DEVICE, INPAINT_MODEL_ID, INPAINT_DTYPE, MESH_GENERATOR_TYPE
 from utils.memory import clear_gpu_memory, MemoryGuard
 from utils.image_processing import extract_masked_object, crop_and_pad_object, run_inpainting_pipeline
-from modules.segmenter import ObjectSegmenter
+from modules.segmenter import ObjectSegmenter, ObjectSegmenterV3
 from modules.depth_estimator import DepthEstimator
 from modules.mesh_generator import MeshGenerator
 from modules.scene_compiler import SceneCompiler
@@ -55,7 +55,7 @@ def run_pipeline(image_path: str, output_dir: str):
     # -------------------------------------------------------------------------
     logger.info("--- STAGE 1: Semantic Segmentation ---")
     with MemoryGuard():
-        segmenter = ObjectSegmenter()
+        segmenter = ObjectSegmenterV3()
         segments = segmenter.generate_masks(input_image)
         
         # Save individual transparent objects
